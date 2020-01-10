@@ -1,0 +1,92 @@
+:root {
+  --ios-install-invitation-bg: #f2f8ff;
+}
+
+.iosInvitationContainer {
+  position: fixed;
+  z-index: 1000;
+
+  /* position */
+  &.bottom {
+    width: calc(100% - 32px);
+    left: 16px;
+    bottom: 20px;
+
+    .triangleShadow {
+      position: fixed;
+      bottom: 8px;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      box-shadow: -1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+      transform: rotate(-45deg);
+      z-index: 999;
+    }
+
+    .triangle {
+      border: 16px solid transparent;
+      border-top: 16px solid var(--ios-install-invitation-bg);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -16px;
+      z-index: 1001;
+    }
+  }
+
+  &.top {
+    right: 16px;
+    top: 16px;
+    width: 320px;
+
+    .triangleShadow {
+      display: none;
+    }
+
+    .triangle {
+      border: 16px solid transparent;
+      border-bottom: 16px solid var(--ios-install-invitation-bg);
+      position: absolute;
+      z-index: 1001;
+      bottom: 100%;
+
+      &.iPad {
+        right: 109px;
+      }
+
+      &.iPhone {
+        right: 90px;
+      }
+    }
+  }
+}
+
+.iosInvitation {
+  /* reset */
+  z-index: 1000;
+  box-sizing: border-box;
+  position: relative;
+
+  /* style from design task */
+  background: var(--ios-install-invitation-bg);
+  padding: 16px 46px 16px 16px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.closeIconContainer {
+  position: absolute;
+  padding: 10px;
+  right: 8px;
+  top: 8px;
+}
+
+.iconShareIos {
+  margin: 0 7px;
+  display: inline-block;
+  width: 13px;
+  height: 19px;
+  margin-bottom: -3px;
+}
