@@ -55,7 +55,7 @@ const PwaIosInstallInvitationContent = ({
   const [visible, setVisible] = useState(true);
 
   if (typeof iosInvitationContent === "function") {
-    iosInvitationContent(iosDevice);
+    iosInvitationContent=iosInvitationContent(iosDevice);
   }
 
   // calc position
@@ -106,7 +106,7 @@ const IconClosePanel = () => (
     viewBox="0 0 16 16"
   >
     <path
-      fill="#37434E"
+      fill="var(--ios-install-invitation-text-color)"
       fillRule="evenodd"
       d="M9.273 8l4.463-4.463a.9.9 0 1 0-1.273-1.273L8 6.726 3.537 2.264a.9.9 0 1 0-1.273 1.273L6.727 8l-4.463 4.463a.9.9 0 1 0 1.273 1.273L8 9.273l4.463 4.463a.9.9 0 1 0 1.273-1.273L9.273 8z"
     />

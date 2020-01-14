@@ -3,3 +3,5 @@ package-lock.json
 .DS_Store
 .idea
 package-lock.json
+ios-invitation.js
+pwa-const.js
