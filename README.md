@@ -1,8 +1,8 @@
-# pwa-ios-invitation
+# pwa-ios-invitation [![](https://img.shields.io/npm/v/pwa-ios-invitation.svg?style=flat)](https://www.npmjs.com/package/pwa-ios-invitation) ![](https://img.shields.io/bundlephobia/minzip/pwa-ios-invitation.svg?style=flat)
 
-PWA invitation for iOS (located in right place for different devices) and few utils usefull for PWA.
+PWA invitation react component for iOS (located in right place for different devices) and few utils usefull for PWA.
 
-## `<PwaIosInstallInvitation/>`
+### `<PwaIosInstallInvitation/>`
 
 PWA invitation component on iOS style, located in a bottom for iPhones portrait and in top for iPad and iPhones landscape (greater iPhone SE)
 
@@ -39,7 +39,7 @@ ReactDOM.render(
 | iosInvitationContent    | string, jsx or function(iosDevice) | "Install this webapp on your {iosDevice}: tap `<IconShareIos />` and then Add to Home Screen" | Ios invitation content                                                               |
 
 
-## Consts
+### Consts
 
 Consts that can be usefull with PWA works
 
@@ -60,7 +60,7 @@ import { isPwa, isIos, iosDevice, isSafari } from 'pwa-const-and-invitation'
 
 
 
-## IconShareIos
+### IconShareIos
 
 Ios style "Share" icon. You can use it for iosInvitationContent
 
@@ -74,7 +74,7 @@ import { IconShareIos } from 'pwa-const-and-invitation'
 
 
 
-## useWindowBeforeInstallPrompt
+### useWindowBeforeInstallPrompt
 
 Hook for default PWA install invitation event
 
