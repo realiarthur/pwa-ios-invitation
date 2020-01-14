@@ -3,11 +3,16 @@ export const isIos =
     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) &&
   !window.MSStream;
 
-export let iosDevice = isIos
-  ? /iPad|iPhone|iPod/.exec(window.navigator.userAgent)
+export let iosDeviceFromUserAgent = /iPad|iPhone|iPod/.exec(
+  window.navigator.userAgent
+);
+export const iosDevice = isIos
+  ? iosDeviceFromUserAgent
+    ? iosDeviceFromUserAgent[0]
+    : navigator.platform === "MacIntel"
+    ? "iPad"
+    : null
   : null;
-if (iosDevice) iosDevice = iosDevice[0];
-else if (isIos && navigator.platform === "MacIntel") iosDevice = "iPad";
 
 export const isPwa = !!(
   window.navigator.standalone ||
