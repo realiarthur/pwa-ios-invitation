@@ -2,6 +2,8 @@
 
 PWA invitation react component for iOS (located in right place for different devices) and few utils usefull for PWA.
 
+![Screenshot](Screenshot.png)
+
 ### `<PwaIosInstallInvitation/>`
 
 PWA invitation component on iOS style, located in a bottom for iPhones portrait and in top for iPad and iPhones landscape (greater iPhone SE)
@@ -31,12 +33,14 @@ ReactDOM.render(
 )
 ```
 
-| Prop                    | Type                               | Default                                                                                       | Description                                                                          |
+| Prop / Const                    | Type                               | Default                                                                                       | Description                                                                          |
 | ----------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | showPwaInvitation       | bool or function::bool             | true                                                                                          | Value or function that set PWA invitation visablity. It's affect Android devices too |
 | iosInvitationTimeout    | int                                | 0                                                                                             | Milliseconds after last closing PWA invitation on ios to show it again               |
 | iosInvitationOnlySafari | bool                               | false                                                                                         | Set to true to show invitation on ios only in Safari                                 |
 | iosInvitationContent    | string, jsx or function(iosDevice) | "Install this webapp on your {iosDevice}: tap `<IconShareIos />` and then Add to Home Screen" | Ios invitation content                                                               |
+| --ios-install-invitation-bg    | css const | #f2f8ff | Component background color |
+| --ios-install-invitation-text-color    | css const | #37434E | Component text color |
 
 
 ### Consts
