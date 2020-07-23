@@ -6,29 +6,29 @@ PWA invitation react component for iOS (located in right place for different dev
 
 ### `<PwaIosInstallInvitation/>`
 
-PWA invitation component on iOS style, located in a bottom for iPhones portrait and in top for iPad and iPhones landscape (greater iPhone SE)
+PWA invitation component on iOS style, located in a bottom for iPhones portrait and in top for iPad and iPhones (greater iPhone SE) landscape 
 
 ```jsx
-import React, { Fragment } from 'react'
-import PwaIosInstallInvitation, { IconShareIos } from 'pwa-const-and-invitation'
+import React from 'react'
+import PwaIosInstallInvitation, { IconShareIos, IconHomeScreen } from 'pwa-const-and-invitation'
 
 ReactDOM.render(
-  <Fragment>
+  <>
     <App />
 
     <PwaIosInstallInvitation
       showPwaInvitation={true}
       iosInvitationTimeout={10000}
       iosInvitationOnlySafari={true}
+      iosInvitationHeader={(iosDevice) => `Install this webapp on your ${iosDevice}`}
       iosInvitationContent={
-        (iosDevice)=>
-          <Fragment>
-            Install my awesome webapp on your {iosDevice}: tap <IconShareIos /> and then Add to Home Screen
-          </Fragment>
+        <>
+          Open this page in Safari, tap <IconShareIos /> and then <br></br>
+          Add to Home Screen <IconHomeScreen />
+        </>
       }
     />
-
-  </Fragment>,
+  </>,
   document.getElementById('root')
 )
 ```
@@ -38,7 +38,8 @@ ReactDOM.render(
 | showPwaInvitation       | bool or function::bool             | true                                                                                          | Value or function that set PWA invitation visablity. It's affect Android devices too |
 | iosInvitationTimeout    | int                                | 0                                                                                             | Milliseconds after last closing PWA invitation on ios to show it again               |
 | iosInvitationOnlySafari | bool                               | false                                                                                         | Set to true to show invitation on ios only in Safari                                 |
-| iosInvitationContent    | string, jsx or function(iosDevice) | "Install this webapp on your {iosDevice}: tap `<IconShareIos />` and then Add to Home Screen" | Ios invitation content                                                               |
+| iosInvitationContent    | string, jsx or function(iosDevice) |  | Ios invitation header  
+| iosInvitationContent    | string, jsx or function(iosDevice) |  | Ios invitation content                                                               |
 | --ios-install-invitation-bg    | css const | #f2f8ff | Component background color |
 | --ios-install-invitation-text-color    | css const | #37434E | Component text color |
 
@@ -64,12 +65,12 @@ import { isPwa, isIos, iosDevice, isSafari } from 'pwa-const-and-invitation'
 
 
 
-### IconShareIos
+### IconShareIos, IconHomeScreen
 
-Ios style "Share" icon. You can use it for iosInvitationContent
+Ios style "Share" and "Add to Home Screen" icons. It may be useful for iosInvitationHeader or iosInvitationContent
 
 ```jsx
-import { IconShareIos } from 'pwa-const-and-invitation'
+import { IconShareIos, IconHomeScreen } from 'pwa-const-and-invitation'
 ```
 
 | Prop      | Type   | Description                         |
@@ -85,8 +86,8 @@ Hook for default PWA install invitation event
 
 ```jsx
 // use this one to reduce bundle size, if you need only const
-import { IconShareIos } from 'pwa-const-and-invitation/hooks'
+import { useWindowBeforeInstallPrompt } from 'pwa-const-and-invitation/hooks'
 
 // or you can use this one, if you use invitation too
-import { IconShareIos } from 'pwa-const-and-invitation'
+import { useWindowBeforeInstallPrompt } from 'pwa-const-and-invitation'
 ```

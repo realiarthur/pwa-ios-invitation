@@ -1,67 +1,81 @@
 :root {
   --ios-install-invitation-bg: #f2f8ff;
-  --ios-install-invitation-text-color: #37434E;
+  --ios-install-invitation-text-color: #37434e;
 }
 
 .iosInvitationContainer {
   position: fixed;
   z-index: 1000;
   color: var(--ios-install-invitation-text-color);
+}
 
-  /* position */
-  &.bottom {
-    width: calc(100% - 32px);
-    left: 16px;
-    bottom: 20px;
 
-    .triangleShadow {
-      position: fixed;
-      bottom: 8px;
-      left: 50%;
-      width: 24px;
-      height: 24px;
-      margin-left: -12px;
-      box-shadow: -1px 1px 5px 0 rgba(0, 0, 0, 0.15);
-      transform: rotate(-45deg);
-      z-index: 999;
-    }
+.iosInvitationContainer .iosInvitationHeaderText {
+  padding-right: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+}
 
-    .triangle {
-      border: 16px solid transparent;
-      border-top: 16px solid var(--ios-install-invitation-bg);
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -16px;
-      z-index: 1001;
-    }
-  }
+.iosInvitationContainer .invitationContent {
+  /* text-align: center; */
+  line-height: 1.5;
+}
 
-  &.top {
-    right: 16px;
-    top: 16px;
-    width: 320px;
+/* position */
+.iosInvitationContainer.bottom {
+  width: calc(100% - 32px);
+  left: 16px;
+  bottom: 20px;
+}
 
-    .triangleShadow {
-      display: none;
-    }
+.iosInvitationContainer.bottom .triangleShadow {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  box-shadow: -1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+  transform: rotate(-45deg);
+  z-index: 999;
+}
 
-    .triangle {
-      border: 16px solid transparent;
-      border-bottom: 16px solid var(--ios-install-invitation-bg);
-      position: absolute;
-      z-index: 1001;
-      bottom: 100%;
+.iosInvitationContainer.bottom .triangle {
+  border: 16px solid transparent;
+  border-top: 16px solid var(--ios-install-invitation-bg);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -16px;
+  z-index: 1001;
+}
 
-      &.iPad {
-        right: 109px;
-      }
+.iosInvitationContainer.top {
+  right: 16px;
+  top: 16px;
+  width: 320px;
+}
 
-      &.iPhone {
-        right: 90px;
-      }
-    }
-  }
+.iosInvitationContainer.top .triangleShadow {
+  display: none;
+}
+
+.iosInvitationContainer.top .triangle {
+  border: 16px solid transparent;
+  border-bottom: 16px solid var(--ios-install-invitation-bg);
+  position: absolute;
+  z-index: 1001;
+  bottom: 100%;
+}
+
+.iosInvitationContainer.top .triangle.iPad {
+  right: 109px;
+}
+
+.iosInvitationContainer.top .triangle.iPhone {
+  right: 90px;
 }
 
 .iosInvitation {
@@ -72,7 +86,7 @@
 
   /* style from design task */
   background: var(--ios-install-invitation-bg);
-  padding: 16px 46px 16px 16px;
+  padding: 16px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
   font-size: 12px;
   line-height: 18px;
@@ -86,9 +100,7 @@
 }
 
 .iconShareIos {
-  margin: 0 7px;
+  margin: 0 5px;
   display: inline-block;
-  width: 13px;
-  height: 19px;
-  margin-bottom: -3px;
+  margin-bottom: -5px;
 }

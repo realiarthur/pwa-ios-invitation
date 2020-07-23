@@ -1,6 +1,6 @@
 {
   "name": "pwa-ios-invitation",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "PWA invitation for iOS and few utils usefull for PWA.",
   "main": "ios-invitation.js",
   "scripts": {
